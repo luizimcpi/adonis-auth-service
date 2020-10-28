@@ -50,9 +50,47 @@ Run the following command to run startup migrations.
 adonis migration:run
 ```
 ### Create auth controller
+```
 adonis make:controller Auth
+```
 
 Choose For Http... Option
+
+### Configure Tests
+```
+adonis install @adonisjs/vow
+
+add the following line in const providers of app.js
+'@adonisjs/vow/providers/VowProvider'
+
+if your tests use DB follow next steps
+yarn add sqlite3 --save
+
+add following to .env.testing
+DB_CONNECTION=sqlite_testing
+
+add following to config/database.js
+  sqlite_testing: {
+    client: 'sqlite3',
+    connection: ':memory:',
+    useNullAsDefault: true
+  },
+
+Uncomment lines that contains migration:run and migration:reset in vowfile.js
+Uncomment when want to run migrations
+const ace = require('@adonisjs/ace')
+```
+
+### Create Tests
+```
+adonis make:test User
+```
+
+### Execute Tests
+```
+adonis test
+```
+
 
 ## Docker postgres with PGADMIN
 ```
