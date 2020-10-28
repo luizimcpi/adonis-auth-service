@@ -23,7 +23,7 @@ or manually clone the repo and then run `npm install`.
 First run
 
 ```
-yarn add pg
+yarn add pg --save
 ```
 
 Add Following content to the .env file (Change your db credentials)
