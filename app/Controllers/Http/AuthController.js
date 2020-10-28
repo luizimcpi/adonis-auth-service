@@ -29,8 +29,15 @@ class AuthController {
         return newTokenResponse
     }
 
-    async authenticate({ response }) {
-        response.json('ok')
+    async authenticate({ response, auth }) {
+        try {
+            await auth.check()
+            const responseOk = {statusCode: 200, status: 'Ok', message: 'Success Authenticated'}
+            response.json(responseOk)
+        } catch (e) {
+            const responseUnauthorized = {statusCode: 401, status: 'Unauthorized', message: 'Authentication Failed'}
+            response.unauthorized({error: e.message, description: responseUnauthorized })
+        }
     }
 }
 
