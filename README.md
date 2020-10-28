@@ -1,5 +1,7 @@
 # Adonis API application
 
+[![Build Status](https://travis-ci.org/luizimcpi/adonis-auth-service.svg?branch=master)](https://travis-ci.org/luizimcpi/adonis-auth-service)
+
 This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
 
 1. Bodyparser
