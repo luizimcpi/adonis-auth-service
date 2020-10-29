@@ -69,7 +69,20 @@ adonis make:test Post
 4-Execute tests:
 adonis test or adonis test functional
 
-Obs: If you want to execute tests with memory db install sqlite and configure .env.testing
+```
+### Configure database for tests
+```
+1-add DB_CONNECTION=sqlite_testing in .env.testing
+2-Install sqlite3 -> yarn add sqlite3 --save
+3-configure vowfile.js to run migrations
+4-add following in the database.js
+ sqlite_testing: {
+    client: 'sqlite3',
+    connection: {
+      filename: './test.db',
+    },
+    useNullAsDefault: true
+  },
 ```
 
 ## Docker postgres with PGADMIN
