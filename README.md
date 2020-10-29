@@ -54,6 +54,24 @@ adonis make:controller Auth
 
 Choose For Http... Option
 
+### Configure Tests
+```
+1-adonis install @adonisjs/vow
+2-add this in start/app.js aceProviders: 
+
+const aceProviders = [
+  '@adonisjs/vow/providers/VowProvider'
+] 
+
+3-create test:
+adonis make:test Post
+
+4-Execute tests:
+adonis test or adonis test functional
+
+Obs: If you want to execute tests with memory db install sqlite and configure .env.testing
+```
+
 ## Docker postgres with PGADMIN
 ```
 1-docker pull postgres
