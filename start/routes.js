@@ -16,6 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
+Route.get("/api/health-check", "HomeController.healthCheck")
 Route.post('/api/users', 'AuthController.register')
 Route.post('/api/users/login', 'AuthController.generateToken')
 Route.post('/api/users/refresh', 'AuthController.generateTokenWithRefresh')
